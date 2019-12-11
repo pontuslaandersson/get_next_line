@@ -6,7 +6,7 @@
 #    By: panderss <panderss@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/29 17:17:19 by panderss          #+#    #+#              #
-#    Updated: 2019/11/11 15:41:34 by panderss         ###   ########.fr        #
+#    Updated: 2019/12/11 12:37:38 by panderss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,12 +78,14 @@ SRC = ./ft_memset.c \
 	  ./ft_iswhitespace.c \
 	  ./ft_strndup.c
 
+INCLUDES = ./includes/
+
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME):
-	gcc -c -Wall -Wextra -Werror $(SRC)
+	gcc -c -Wall -Wextra -Werror $(SRC) -I ./includes/
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
